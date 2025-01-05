@@ -11,18 +11,16 @@ LabVIEW development environment 2017 or later.
 
 **Compatible hardware (HAL):** 
 
-DAQmx V1: 6535/6536/6537 6321/6361/6363 and so on
+	DAQmx V1:	6535/6536/6537 (5-25MHz bus clock) 6321/6361/6363 and so on
+	DAQmx V2:	6321/6361/6363 and so on (PCIe 0.5-5MHz bus clock, USB 0.5MHz)
+			NI/Emerson hardware requires "Digital Waveform" and DAQmx support, multifunction DAQs must be X-series
+			NI/Emerson hardware requires NI-DAQmx drivers, version used during development: ni-daqmx_20.7.0
 
-DAQmx V2: 6321/6361/6363 and so on
+	FTn232H: 	FTDI devices FT2232H or FT232H (3k7 - 10MHz bus clock)
 
-FTn232H: FTDI devices FT2232H or FT232H
+	J-LINK BSCAN: 	Segger J-Link debug probes (max 15MHz bus clock, but slow on BSCAN V2)
 
-J-LINK BSCAN: Segger J-Link debug probes
-
-(NI/Emerson hardware requires "Digital Waveform" and DAQmx support, multifunction DAQs must be X-series)
-
-(NI/Emerson hardware requires NI-DAQmx drivers, version used during development: ni-daqmx_20.7.0)
-
+	
 **Protocol library description:**
 --------------------------------------------------------------------------------------
 This protocol library is distributed as packed library (lvlibp). The block diagrams are only partially visible to help to understand functionality and debugging. Without a paid license the physical bus update rate is locked to 10000 which correlates to 5kHz bus clock speed. This enables full use of the library to test it and use it for applications where speed is not a concern.
