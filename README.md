@@ -21,6 +21,7 @@ J-LINK BSCAN: Segger J-Link debug probes
 
 (NI/Emerson hardware requires "Digital Waveform" and DAQmx support, multifunction DAQs must be X-series)
 
+(NI/Emerson hardware requires NI-DAQmx drivers, version used during development: ni-daqmx_20.7.0)
 
 **Protocol library description:**
 --------------------------------------------------------------------------------------
