@@ -100,7 +100,9 @@ Hardware handle (INIT) open/close exceptions to note:
 
 GETTING STARTED:
 ----------------
-	- Obtain FT232H hardware with 3V3 logic compatible target is most simple
+	- Your target MCU must be bootstrapped or configured so it is in JTAG Boundary Scan mode.
+ 	
+ 	- Obtain FT232H hardware with 3V3 logic compatible target is most simple
 	- Obtain FT232H serial number with "FTDI_Get_Device_Serial_Number_By_Index.vi"
  	- Segger J-Link is also very easy to start use but tested only with V6.98e jlinkarm.dll
  
