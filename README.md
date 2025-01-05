@@ -41,6 +41,23 @@ I2C requires hardware conditioning when driven directly to physical bus, since S
 
 DAQmx V1 also requires PFI5 channel for all protocols input data clocking. PFI5 also enables longer cables between DAQmx-board and target MCU.
 
+GETTING STARTED:
+----------------
+	- Your target MCU must be bootstrapped or configured so it is in JTAG Boundary Scan mode.
+ 	
+ 	- Obtain FT232H hardware with 3V3 logic compatible target is most simple
+	- Obtain FT232H serial number with "FTDI_Get_Device_Serial_Number_By_Index.vi"
+ 	- Segger J-Link is also very easy to start use but tested only with V6.98e jlinkarm.dll
+ 
+	- Download correct BSDL file(s) for your target MCU
+	- Open example VI and check the parameters and their help-texts: "BSCAN_DEMO00_init_xc7z020_clg400.vi"
+ 	- Modify the example VI to match your target. Also modify the block diagram UserConfig for safe states!
+	  Usually BSDL files configure all pins as inputs.
+  	- Run the example VI and check that the "ALL TAPs IDCODE OK" boolean is true.
+   
+   	- Next you can open and modify "BSCAN_DEMO01_GPIO_writeRead.vi" to match your target and toggle GPIO output states.
+
+
 **Boundary Scan BSCAN V1 and V2:**
 --------------------------------------------------------------------------------------
 There exists two versions of execution for the Boundary Scan (BSCAN): V1 and V2.
@@ -97,20 +114,6 @@ Hardware handle (INIT) open/close exceptions to note:
 	VI open > J-Link handle open > VI close :OK 
 
 
-GETTING STARTED:
-----------------
-	- Your target MCU must be bootstrapped or configured so it is in JTAG Boundary Scan mode.
- 	
- 	- Obtain FT232H hardware with 3V3 logic compatible target is most simple
-	- Obtain FT232H serial number with "FTDI_Get_Device_Serial_Number_By_Index.vi"
- 	- Segger J-Link is also very easy to start use but tested only with V6.98e jlinkarm.dll
- 
-	- Download correct BSDL file(s) for your target MCU
-	- Open example VI and check the parameters and their help-texts: "BSCAN_DEMO00_init_xc7z020_clg400.vi"
- 	- Modify the example VI to match your target. Also modify the block diagram UserConfig for safe states!
-	  Usually BSDL files configure all pins as inputs.
-  	- Run the example VI and check that the "ALL TAPs IDCODE OK" boolean is true.
-   
-   	- Next you can open and modify "BSCAN_DEMO01_GPIO_writeRead.vi" to match your target and toggle GPIO output states.
+
 
    :END 
